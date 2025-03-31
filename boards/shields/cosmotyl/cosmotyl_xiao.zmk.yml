@@ -1,0 +1,11 @@
+file_format: "1"
+id: cosmotyl_xiao
+name: Cosmotyl_Xiao
+type: shield
+url: https://zmk.dev/docs/troubleshooting/hardware-issues
+requires: [seeed_xiao]
+features:
+  - keys
+siblings:
+  - cosmotyl_xiao_left
+  - cosmotyl_xiao_right
