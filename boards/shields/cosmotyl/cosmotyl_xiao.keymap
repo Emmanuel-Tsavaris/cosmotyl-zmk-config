@@ -17,6 +17,10 @@
     tapping-term-ms = <150>;
 };
 
+&soft_off {
+    hold-time-ms = <3000>; // Only turn off it the key is held for 5 seconds or longer.
+};
+
 / {
     behaviors {
         ht: hold_tap {
@@ -96,7 +100,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //|          │          │          │  RESET   │          │PROFILE 0 │   │PROFILE 3 │          │  RESET   │          │          │
-             &trans    &trans     &trans    &sys_reset  &trans    &bt BT_SEL 0  &bt BT_SEL 3  &trans   &sys_reset  &trans     &trans      &trans
+            &soft_off  &trans     &trans    &sys_reset  &trans    &bt BT_SEL 0  &bt BT_SEL 3  &trans   &sys_reset  &trans     &trans     &soft_off
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //|          │          │          │BOOTLOADER│          │PROFILE 1 │   │PROFILE 4 │          │BOOTLOADER│          │          │
              &trans    &trans     &trans    &bootloader &trans    &bt BT_SEL 1  &bt BT_SEL 4 &trans    &bootloader  &trans    &trans      &trans
