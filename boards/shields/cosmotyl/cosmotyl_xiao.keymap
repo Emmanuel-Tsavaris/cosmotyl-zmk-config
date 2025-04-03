@@ -10,11 +10,11 @@
 //#define HRMR(k1,k2,k3,k4) &ht RALT k1  &ht RGUI k2  &ht RCTRL k3  &ht RSHFT k4
 
 &lt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <500>;
 };
 
 &mt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <500>;
 };
 
 &soft_off {
