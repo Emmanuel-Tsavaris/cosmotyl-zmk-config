@@ -25,7 +25,7 @@
 
 / {
     behaviors {
-        msmt: mouse_mod_tap {
+        msmt: mod_tap {
             display-name = "Mouse-Mod-Tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -33,7 +33,7 @@
             tapping-term-ms = <250>;
             bindings = <&kp>, <&mkp>;
         };
-        mslt: mouse_layer_tap {
+        mslt: layer_tap {
             display-name = "Mouse-Layer-Tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
