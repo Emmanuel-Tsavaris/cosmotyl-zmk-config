@@ -24,6 +24,18 @@
 };
 
 / {
+    macros {
+        mission_control: mission_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp UP>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
+
     behaviors {
         ms_mt: mouse_mod_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -33,9 +45,7 @@
             bindings = <&kp>, <&mkp>;
             display-name = "Mouse-Mod-Tap";
         };
-    };
-
-    behaviors {
+    
         ms_lt: mouse_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -43,6 +53,15 @@
             tapping-term-ms = <250>;
             bindings = <&mo>, <&mkp>;
             display-name = "Mouse-Layer-Tap";
+        };
+
+        mc_lt: mission_control_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&mo>, <&mission_control>;
+            display-name = "Mission-Control-Layer-Tap";
         };
     };
 
@@ -68,7 +87,7 @@
         //           │LEFT CTRL |  Z       │  X       │  C       │  V       │   | B        │  N       │  M       │ , <      │ . >      │
                        &kp LCTRL  &kp Z     &kp X      &kp C      &kp V          &kp B     &kp N      &kp M      &kp COMMA  &kp DOT
         //           ╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-                                 &mt LSHFT SPACE &ms_mt LCMD LCLK &ms_lt 2 RCLK  &lt 1 SPACE &mt RALT SLCK &mt RSHFT SPACE
+                                 &mt LSHFT SPACE &ms_mt LCMD LCLK &ms_lt 2 RCLK  &mc_lt 1 0 &mt RALT SLCK &mt RSHFT SPACE
         //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
