@@ -84,10 +84,10 @@
         //|   CAPS   │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │  ENTER   │
            &caps_word  &kp A       &kp S     &kp D      &kp F      &kp G          &kp H      &kp J     &kp K       &kp L      &kp SQT    &kp ENTER
         //╰──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯
-        //           │LEFT CTRL |  Z       │  X       │  C       │  V       │   | B        │  N       │  M       │ , <      │ . >      │
-                       &kp LCTRL  &kp Z     &kp X      &kp C      &kp V          &kp B     &kp N      &kp M      &kp COMMA  &kp DOT
+        //           │LEFT CMD  |  Z       │  X       │  C       │  V       │   | B        │  N       │  M       │ , <      │ . >      │
+                       &kp LCMD    &kp Z     &kp X      &kp C      &kp V          &kp B     &kp N      &kp M      &kp COMMA  &kp DOT
         //           ╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-                                 &mt LSHFT SPACE &ms_mt LCMD LCLK &ms_lt 2 RCLK  &mc_lt 1 0 &mt RALT SLCK &mt RSHFT SPACE
+                                        &mt LSHFT SPACE &mkp LCLK &ms_lt 2 RCLK  &mc_lt 1 0 &mt RALT SLCK &mt RSHFT SPACE
         //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
@@ -104,7 +104,7 @@
         //           │          │  7       │  8       │  9       │  0       │   │PRINT SCR │          │    F8    │    F12   │          │
                         &trans     &kp N7     &kp N8     &kp N9     &kp N0        &kp PSCRN   &trans    &kp F8     &kp F12    &trans
         //           ╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-                                             &trans      &trans     &trans        &trans     &trans     &trans
+                                             &kp LCTRL   &trans     &trans        &trans     &trans     &trans
         //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
