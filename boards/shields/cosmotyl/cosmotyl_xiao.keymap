@@ -1,6 +1,7 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/behaviors.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -25,16 +26,15 @@
 / {
     behaviors {
         msmt: mouse_mod_tap {
-            label = "mouse_mod_tap";
+            display-name = "Mouse-Mod-Tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <250>;
             bindings = <&kp>, <&mkp>;
         };
-
         mslt: mouse_layer_tap {
-            label = "mouse_layer_tap";
+            display-name = "Mouse-Layer-Tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
