@@ -34,7 +34,7 @@
             display-name = "Mouse-Mod-Tap";
         };
     };
-    
+
     behaviors {
         ms_lt: mouse_layer_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -68,7 +68,7 @@
         //           │LEFT CTRL |  Z       │  X       │  C       │  V       │   | B        │  N       │  M       │ , <      │ . >      │
                        &kp LCTRL  &kp Z     &kp X      &kp C      &kp V          &kp B     &kp N      &kp M      &kp COMMA  &kp DOT
         //           ╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-                                 &mt LSHFT SPACE &ms_mt LCMD LCLK &ms_lt 2 RCLK  &lt 1 LCTRL(UP) &mt RALT SLCK &mt RSHFT SPACE
+                                 &mt LSHFT SPACE &ms_mt LCMD LCLK &ms_lt 2 RCLK  &lt 1 SPACE &mt RALT SLCK &mt RSHFT SPACE
         //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
