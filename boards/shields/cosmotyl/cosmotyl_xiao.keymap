@@ -24,15 +24,22 @@
 
 / {
     behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
+        msmt: mouse_mod_tap {
+            label = "mouse_mod_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&kp>, <&mkp>;
+        };
+
+        mslt: mouse_layer_tap {
+            label = "mouse_layer_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&kp>;
+            tapping-term-ms = <250>;
+            bindings = <&mo>, <&mkp>;
         };
     };
 
@@ -58,7 +65,7 @@
         //           │LEFT CTRL |  Z       │  X       │  C       │  V       │   | B        │  N       │  M       │ , <      │ . >      │
                        &kp LCTRL  &kp Z     &kp X      &kp C      &kp V          &kp B     &kp N      &kp M      &kp COMMA  &kp DOT
         //           ╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-                                    &mt LSHFT SPACE &mt LCMD LCLK &lt 2 RCLK  &lt 1 LCTRL(UP) &mt RALT LNLCK &mt RSHFT SPACE
+                                 &mt LSHFT SPACE &msmt LCMD LCLK &mslt 2 RCLK  &lt 1 LCTRL(UP) &mt RALT LNLCK &mt RSHFT SPACE
         //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
@@ -87,7 +94,7 @@
              &trans    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK   &kp PIPE   &kp COLON   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //|          │  =       │    [     │   {      │    (     │    <     │   │    >     │    )     │    }     │  ]       │   ;      │          |
-             &trans    &kp EQUAL  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT           &kp GT   &kp RPAR   &kp RBRC   &kp RBKT    &kp SEMI   &trans
+             &trans    &kp EQUAL  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT         &kp GT     &kp RPAR   &kp RBRC   &kp RBKT   &kp SEMI   &trans
         //╰──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯
         //           │  +       |   -      │          │          │    /     │   |    \     │  _       │   ~      │  `       │    ?     │
                        &kp PLUS  &kp MINUS   &trans     &trans     &kp FSLH       &kp BSLH   &kp UNDER  &kp TILDE  &kp GRAVE  &kp QMARK
