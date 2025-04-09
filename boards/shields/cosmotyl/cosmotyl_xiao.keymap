@@ -25,21 +25,21 @@
 
 / {
     behaviors {
-        msmt: mod_tap {
-            display-name = "Mouse-Mod-Tap";
+        ms_mt: mouse_mod_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <250>;
-            bindings = <&kp>, <&mkp>;
+            bindings = <&kp>, <&kp>;
+            display-name = "Mouse-Mod-Tap";
         };
-        mslt: layer_tap {
-            display-name = "Mouse-Layer-Tap";
+        ms_lt: mouse_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <250>;
-            bindings = <&mo>, <&mkp>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Mouse-Layer-Tap";
         };
     };
 
@@ -65,7 +65,7 @@
         //           │LEFT CTRL |  Z       │  X       │  C       │  V       │   | B        │  N       │  M       │ , <      │ . >      │
                        &kp LCTRL  &kp Z     &kp X      &kp C      &kp V          &kp B     &kp N      &kp M      &kp COMMA  &kp DOT
         //           ╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-                                 &mt LSHFT SPACE &msmt LCMD LCLK &mslt 2 RCLK  &lt 1 LCTRL(UP) &mt RALT LNLCK &mt RSHFT SPACE
+                                 &mt LSHFT SPACE &ms_mt LCMD LCLK &ms_lt 2 RCLK  &lt 1 LCTRL(UP) &mt RALT LNLCK &mt RSHFT SPACE
         //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
@@ -80,7 +80,7 @@
              &trans     &kp DOT   &kp N4     &kp N5     &kp N6     &kp DEL        &kp LARW   &kp DARW   &kp UARW   &kp RARW    &trans    &trans
         //╰──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯
         //           │          │  7       │  8       │  9       │  0       │   │PRINT SCR │          │    F8    │    F12   │          │
-                        &trans     &kp N7     &kp N8     &kp N9     &kp N0         &kp PSCRN   &trans     &kp F8     &kp F12    &trans
+                        &trans     &kp N7     &kp N8     &kp N9     &kp N0        &kp PSCRN   &trans    &kp F8     &kp F12    &trans
         //           ╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
                                              &trans      &trans     &trans        &trans     &trans     &trans
         //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
