@@ -17,10 +17,11 @@
 
 &mt {
     tapping-term-ms = <250>;
+    flavor = "tap-preferred";
 };
 
 &soft_off {
-    hold-time-ms = <3000>; // Only turn off it the key is held for 5 seconds or longer.
+    hold-time-ms = <3000>; // Only turn off if the key is held for 3 seconds or longer.
 };
 
 / {
@@ -41,7 +42,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <150>;
             bindings = <&kp>, <&mkp>;
             display-name = "Mouse-Mod-Tap";
         };
@@ -49,8 +50,8 @@
         ms_lt: mouse_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <250>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
             bindings = <&mo>, <&mkp>;
             display-name = "Mouse-Layer-Tap";
         };
@@ -58,8 +59,8 @@
         mc_lt: mission_control_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <250>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
             bindings = <&mo>, <&mission_control>;
             display-name = "Mission-Control-Layer-Tap";
         };
