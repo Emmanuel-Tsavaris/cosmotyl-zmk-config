@@ -79,14 +79,14 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //|    TAB   │  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │BACKSPACE │
-             &kp TAB   &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
+        //|    TAB   │  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ;   :   │BACKSPACE │
+             &kp TAB   &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &kp SEMI   &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|   CAPS   │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │  ENTER   │
-           &caps_word  &kp A       &kp S     &kp D      &kp F      &kp G          &kp H      &kp J     &kp K       &kp L      &kp SQT    &kp ENTER
+        //|   CMD    │  A       │  R       │  S       │  T       │  D       │   │  H       │  N       │  E       │  I       │    O     │  ENTER   │
+           &kp LCMD    &kp A       &kp R     &kp S      &kp T      &kp D          &kp H      &kp N     &kp E       &kp I      &kp O      &kp ENTER
         //╰──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯
-        //           │LEFT CMD  |  Z       │  X       │  C       │  V       │   | B        │  N       │  M       │ , <      │ . >      │
-                       &kp LCMD    &kp Z     &kp X      &kp C      &kp V          &kp B     &kp N      &kp M      &kp COMMA  &kp DOT
+        //           │  Z       |  X       │  C       │  V       │  B       │   |  K       │  M       │ , <      │ . >      │  / ?     │
+                        &kp Z      &kp X     &kp C      &kp V      &kp B           &kp K     &kp M     &kp COMMA  &kp DOT     &kp FSLH
         //           ╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
                                         &mt LSHFT SPACE &mkp LCLK &ms_lt 2 RCLK  &mc_lt 1 0 &mt RALT SLCK &mt RSHFT SPACE
         //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
@@ -99,11 +99,11 @@
         //|          │ ESC      │  1       │  2       │  3       │  INSERT  │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │          |          |
              &trans     &kp ESC    &kp N1     &kp N2     &kp N3     &kp INS       &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|          │  . >     │  4       │  5       │  6       │  DELETE  │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          |          |
-             &trans     &kp DOT   &kp N4     &kp N5     &kp N6     &kp DEL        &kp LARW   &kp DARW   &kp UARW   &kp RARW    &trans    &trans
+        //|          │          │  4       │  5       │  6       │  DELETE  │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          |          |
+             &trans     &trans   &kp N4     &kp N5     &kp N6     &kp DEL        &kp LARW   &kp DARW   &kp UARW   &kp RARW    &trans    &trans
         //╰──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯
-        //           │          │  7       │  8       │  9       │  0       │   │PRINT SCR │          │    F8    │    F12   │          │
-                        &trans     &kp N7     &kp N8     &kp N9     &kp N0        &kp PSCRN   &trans    &kp F8     &kp F12    &trans
+        //           │    .     │  7       │  8       │  9       │  0       │   │PRINT SCR │          │    F8    │    F12   │          │
+                       &kp DOT     &kp N7     &kp N8     &kp N9     &kp N0        &kp PSCRN   &trans    &kp F8     &kp F12    &trans
         //           ╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
                                              &kp LCTRL   &trans     &trans        &trans     &trans     &trans
         //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
@@ -116,8 +116,8 @@
         //|          │  !       │  @       │  #       │  $       │  %       │   │  ^       │  &       │  *       │  │       │   :      │          |
              &trans    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK   &kp PIPE   &kp COLON   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|          │  =       │    [     │   {      │    (     │    <     │   │    >     │    )     │    }     │  ]       │   ;      │          |
-             &trans    &kp EQUAL  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT         &kp GT     &kp RPAR   &kp RBRC   &kp RBKT   &kp SEMI   &trans
+        //|          │  =       │    [     │   {      │    (     │    <     │   │    >     │    )     │    }     │  ]       │   ' "    │          |
+           &caps_word &kp EQUAL  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT         &kp GT     &kp RPAR   &kp RBRC   &kp RBKT   &kp SQT   &trans
         //╰──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯
         //           │  +       |   -      │          │          │    /     │   |    \     │  _       │   ~      │  `       │    ?     │
                        &kp PLUS  &kp MINUS   &trans     &trans     &kp FSLH       &kp BSLH   &kp UNDER  &kp TILDE  &kp GRAVE  &kp QMARK
