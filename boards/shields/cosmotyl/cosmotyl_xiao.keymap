@@ -21,11 +21,7 @@
 };
 
 &soft_off {
-<<<<<<< Updated upstream
     hold-time-ms = <3000>; // Only turn off if the key is held for 3 seconds or longer.
-=======
-    hold-time-ms = <3000>; // Only turn off it the key is held for 3 seconds or longer.
->>>>>>> Stashed changes
 };
 
 / {
