@@ -79,8 +79,8 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-        //|    TAB   │  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ;   :   │BACKSPACE │
-             &kp TAB   &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &kp SEMI   &kp BSPC
+        //|    TAB   │  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  '   "   │BACKSPACE │
+             &kp TAB   &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &kp SQT    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //|   CMD    │  A       │  R       │  S       │  T       │  D       │   │  H       │  N       │  E       │  I       │    O     │  ENTER   │
            &kp LCMD    &kp A       &kp R     &kp S      &kp T      &kp D          &kp H      &kp N     &kp E       &kp I      &kp O      &kp ENTER
@@ -116,8 +116,8 @@
         //|          │  !       │  @       │  #       │  $       │  %       │   │  ^       │  &       │  *       │  │       │   :      │          |
              &trans    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK   &kp PIPE   &kp COLON   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|          │  =       │    [     │   {      │    (     │    <     │   │    >     │    )     │    }     │  ]       │   ' "    │          |
-           &caps_word &kp EQUAL  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT         &kp GT     &kp RPAR   &kp RBRC   &kp RBKT   &kp SQT   &trans
+        //|          │  =       │    [     │   {      │    (     │    <     │   │    >     │    )     │    }     │  ]       │   ;      │          |
+           &caps_word &kp EQUAL  &kp LBKT   &kp LBRC   &kp LPAR   &kp LT         &kp GT     &kp RPAR   &kp RBRC   &kp RBKT   &kp SEMI   &trans
         //╰──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯
         //           │  +       |   -      │          │          │    /     │   |    \     │  _       │   ~      │  `       │    ?     │
                        &kp PLUS  &kp MINUS   &trans     &trans     &kp FSLH       &kp BSLH   &kp UNDER  &kp TILDE  &kp GRAVE  &kp QMARK
